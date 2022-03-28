@@ -19,6 +19,11 @@ class Cours
     #[ORM\Column(type: 'string', length: 255)]
     private $chapitre;
 
+    #[ORM\Column(type: 'boolean')]
+    private $sortierecemment;
+
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -47,4 +52,17 @@ class Cours
 
         return $this;
     }
+
+    public function getSortierecemment(): ?bool
+    {
+        return $this->sortierecemment;
+    }
+
+    public function setSortierecemment(bool $sortierecemment): self
+    {
+        $this->sortierecemment = $sortierecemment;
+
+        return $this;
+    }
+
 }
