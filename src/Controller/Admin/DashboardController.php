@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Categorie;
+use App\Entity\Cours;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -18,7 +19,7 @@ class DashboardController extends AbstractDashboardController
 
     }
 
-    #[Route('/admin', name: 'admin')]
+    #[Route('/admin', name: 'app_admin')]
     public function index(): Response
     {
         $url = $this->adminUrlGenerator->
@@ -38,8 +39,7 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Users', 'fa fa-user', User::class);
-        yield MenuItem::linkToCrud('categorie', 'fa fa-user', Categorie::class);
-
+        yield MenuItem::linkToCrud('cours', 'fab fa-studiovinari', Cours::class);
     }
 
 }

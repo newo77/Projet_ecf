@@ -63,6 +63,12 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{{path('app_contact')}}">Contact<span class="sr-only">(current)</span></a>
                 </li>
+
+                {% if block('admin') is defined %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{path('app_admin')}}">administration<span class="sr-only">(current)</span></a>
+                </li>
+                {% endif %}
             </ul>
             <div class="navbar-custom">
             {% if app.user%}

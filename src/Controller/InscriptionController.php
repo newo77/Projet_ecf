@@ -27,6 +27,7 @@ class InscriptionController extends AbstractController
     {
         $user = new User();
         $form = $this->createForm(InscriptionType::class ,$user);
+        $form->remove('roles');
 
         $form->handleRequest($request);
 
