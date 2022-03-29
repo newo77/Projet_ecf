@@ -43,7 +43,10 @@ class InscriptionType extends AbstractType
                 'label' => 'Votre mot de passe',
                 'required' => true,
                 'first_options' => ['label' => 'Mot de passe'],
-                'second_options' => ['label' => 'Confirmez votre mot de passe']
+                'second_options' => [
+                    'label' => 'Confirmez votre mot de passe',
+
+                ]
             ])
             ->add('roles', ChoiceType::class, [
                 'choices' =>[

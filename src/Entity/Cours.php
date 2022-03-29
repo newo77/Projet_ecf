@@ -19,8 +19,21 @@ class Cours
     #[ORM\Column(type: 'string', length: 255)]
     private $chapitre;
 
-    #[ORM\Column(type: 'boolean')]
-    private $sortierecemment;
+    #[ORM\Column(type: 'string', length: 255)]
+    private $slug;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $illustration;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $subtitle;
+
+    #[ORM\Column(type: 'text')]
+    private $description;
+
+    #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: 'cours')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $category;
 
 
 
@@ -53,16 +66,65 @@ class Cours
         return $this;
     }
 
-    public function getSortierecemment(): ?bool
+    public function getSlug(): ?string
     {
-        return $this->sortierecemment;
+        return $this->slug;
     }
 
-    public function setSortierecemment(bool $sortierecemment): self
+    public function setSlug(string $slug): self
     {
-        $this->sortierecemment = $sortierecemment;
+        $this->slug = $slug;
 
         return $this;
     }
+
+    public function getIllustration(): ?string
+    {
+        return $this->illustration;
+    }
+
+    public function setIllustration(string $illustration): self
+    {
+        $this->illustration = $illustration;
+
+        return $this;
+    }
+
+    public function getSubtitle(): ?string
+    {
+        return $this->subtitle;
+    }
+
+    public function setSubtitle(string $subtitle): self
+    {
+        $this->subtitle = $subtitle;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
 
 }

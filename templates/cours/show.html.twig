@@ -1,0 +1,21 @@
+{% extends 'base.html.twig.html' %}
+
+{% block title %} {{ cour.nom }} - Ecoit{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        <img src="/uploads/{{ cour.illustration }}" alt="{{ cour.nom }}" class="img-fluid">
+    </div>
+    <div class="col-md-8">
+        <h3>{{ cour.nom }}</h3>
+        <p>{{ cour.subtitle }}</p>
+        <hr>
+        <p>
+            {{ cour.description }}
+        </p>
+        <a href="" class="btn btn-primary">Rentrez dans le cours</a>
+    </div>
+</div>
+
+
+{% endblock %}
