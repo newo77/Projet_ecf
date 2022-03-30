@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\class\Search;
 use App\Entity\Cours;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
@@ -43,6 +44,33 @@ class CoursRepository extends ServiceEntityRepository
         if ($flush) {
             $this->_em->flush();
         }
+    }
+
+    /**
+     * Requête qui permet de récupérer les cours en fonctions de la recherche
+     * @return Cours[]
+     */
+
+    public function FindWithSearch(Search $search)
+    {
+        //créer une requête pour récupérer les élements filtrer
+        $query = $this
+            ->createQueryBuilder('p')
+            ->select('c', 'p',)
+            ->join('p.category', 'c');
+        if (!empty($search->categories)){
+            $query = $query
+                ->andWhere('c.id IN (:categories)')
+                ->setParameter('categories', $search->categories);
+        }
+
+        if (!empty($search->string)){
+            $query = $query
+                ->andWhere('p.name LIKE :string')
+                ->setParameter('string',"%{$search->string}%");
+        }
+
+        return $query->getQuery()->getResult();
     }
 
     // /**

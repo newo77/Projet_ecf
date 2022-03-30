@@ -7,6 +7,7 @@ use App\Entity\Cours;
 use App\Form\SearchType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -20,17 +21,23 @@ class CoursController extends AbstractController
     }
 
 
-
-
     #[Route('/nos-cours', name: 'app_cours')]
-    public function index(): Response
+    public function index(Request $request): Response
     {
-        //récupère les cours créer sur le dashboard dans la section cours
-        $cours = $this->entityManager->getRepository(Cours::class)->findAll();
 
         //récupère le formulaire de la barre de filtre
         $search = new Search();
         $form = $this->createForm(SearchType::class, $search);
+
+        //écoute le formulaire
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()){
+            $cours = $this->entityManager->getRepository(Cours::class)->FindWithSearch($search);
+        } else{
+            //récupère les cours créer sur le dashboard dans la section cours
+            $cours = $this->entityManager->getRepository(Cours::class)->findAll();
+        }
 
 
 
@@ -44,13 +51,15 @@ class CoursController extends AbstractController
     public function show($slug): Response
     {
         $cour = $this->entityManager->getRepository(Cours::class)->findOneBySlug($slug);
+        $cours = $this->entityManager->getRepository(Cours::class)->findByIsBest(1);
 
         if (!$cour) {
             return $this->redirectToRoute('app_cours');
         }
 
         return $this->render('cours/show.html.twig',[
-            'cour' => $cour
+            'cour' => $cour,
+            'cours' => $cours
         ]);
     }
 }

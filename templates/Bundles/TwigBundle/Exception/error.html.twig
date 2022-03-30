@@ -1,0 +1,11 @@
+{% extends 'base.html.twig.html' %}
+
+{% block title %}Page Introuvable - Ecoit{% endblock %}
+
+{% block content %}
+        <div>
+            <h2>Page Introuvable</h2>
+            <p>Cette page ne semble pas être accesible </p>
+            <a href="{{ path('home') }} "class="btn-success">Revenir à l'accueil</a>
+        </div>
+{% endblock %}

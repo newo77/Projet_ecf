@@ -35,6 +35,9 @@ class Cours
     #[ORM\JoinColumn(nullable: false)]
     private $category;
 
+    #[ORM\Column(type: 'boolean')]
+    private $isBest;
+
 
 
     public function getId(): ?int
@@ -122,6 +125,18 @@ class Cours
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getisBest(): ?bool
+    {
+        return $this->isBest;
+    }
+
+    public function setisBest(bool $isBest): self
+    {
+        $this->isBest = $isBest;
 
         return $this;
     }
