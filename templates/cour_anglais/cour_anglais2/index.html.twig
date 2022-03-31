@@ -1,0 +1,37 @@
+{% extends 'base.html.twig.html' %}
+
+{% block title %} {{ cour.nom }} - Ecoit{% endblock %}
+
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-8">
+            <div class="progress mb-3">
+                <div class="progress-bar bg-success w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
+        </div>
+    </div>
+    <hr>
+    <h3 class="ir">LOREM IPSUM</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent auctor viverra ipsum, ut fringilla magna cursus eu. Aenean eget sodales lorem, id ornare est. Suspendisse sagittis odio ac eleifend accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent auctor viverra ipsum, ut fringilla magna cursus eu. Aenean eget sodales lorem, id ornare est. Suspendisse sagittis odio ac eleifend accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent auctor viverra ipsum, ut fringilla magna cursus eu. Aenean eget sodales lorem, id ornare est. Suspendisse sagittis odio ac eleifend accumsan. </p>
+    <iframe width="1100" height="770" src="https://www.youtube.com/embed/AyAQfTxGyqI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+
+    <!-- Pagination -->
+    <nav aria-label="Page navigation example">
+        <ul class="pagination" style=" bottom: 0 ">
+            <li class="page-item"><a class="page-link" href="courAnglais">1</a></li>
+            <li class="page-item"><a class="page-link" href="/cour/anglais2">2</a></li>
+            <li class="page-item"><a class="page-link" href="/cour/anglais3">3</a></li>
+        </ul>
+    </nav>
+
+
+
+{% endblock %}
