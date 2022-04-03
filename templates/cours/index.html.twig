@@ -1,20 +1,31 @@
 {% extends 'base.html.twig.html' %}
 
-{% block title %} <title>{{ cour.nom }} - Ecoit </title>{% endblock %}
+{% block title %} <title> Nos formations - Ecoit </title>{% endblock %}
+
 {% block content %}
 
-    <div class="row">
-        <div class="col-md-3">
-            <h3>filtrer</h3>
-            {{ form(form) }}
-        </div>
-        <div class="col-md-9">
-            <h3>Nos cours</h3>
-            <div class="row" style="margin-bottom: 100px">
-                {% for cour in cours %}
-                    {% include 'cours/simple_cour.html.twig' %}
-                {% endfor %}
+    {% if is_granted('ROLE_APPRENANTS') %}
+
+        <div class="row">
+            <div class="col-md-3">
+                <h3>filtrer</h3>
+                {{ form(form) }}
+            </div>
+            <div class="col-md-9">
+                <h3>Nos cours</h3>
+                <div class="row" style="margin-bottom: 100px">
+                    {% for cour in cours %}
+                        {% include 'cours/simple_cour.html.twig' %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
-    </div>
+
+        {% else %}
+            <a href="/connexion">Pour voir les cours pour nos apprenants connectez-vous!</a>
+
+    {% endif %}
+
+
+
 {% endblock %}
