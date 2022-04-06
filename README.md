@@ -96,4 +96,19 @@ réponse sélectionnée est incorrecte, alors la bonne réponse est montrée.
   
 * Activer les migrations afin de récupérer entièrement la base de données
   symfony console doctrine:migrations:migrate (pour effectuer cette commande vous devez avoir le CLI de symfony!)
+  
+* Lancez le serveur de Symfony
+  symfony server:start
+  
+# Déployer l'application sur Heroku
+
+* Se connecter avec son compte Heroku
+  heroku login
+  
+* Créer un nouveau projet
+  heroku create Ecoit
+  
+* Configurer les variables d'environnement
+
+
 
