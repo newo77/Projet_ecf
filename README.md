@@ -80,3 +80,20 @@ Sur la page d’un quiz, les questions sont affichées les unes à la suite des 
 question est un formulaire dont les réponses sont des champs de type radio. Au clic du 
 bouton “corriger”, le quiz révèle si les réponses choisies sont correctes ou incorrectes. Si la 
 réponse sélectionnée est incorrecte, alors la bonne réponse est montrée.
+
+# Installation en local
+
+* Cloner le projet 
+   git clone git@github.com:newo77/Projet_ecf.git
+
+* Modifier le fichier .env en fonction de votre environnement de developpement
+
+* Installez les dépendances avec composer
+  composer install
+  
+* Installez les dépendances gérées par Webpack
+  yarn install
+  
+* Activer les migrations afin de récupérer entièrement la base de données
+  symfony console doctrine:migrations:migrate (pour effectuer cette commande vous devez avoir le CLI de symfony!)
+
