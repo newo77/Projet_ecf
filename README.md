@@ -18,7 +18,7 @@ leur empreinte numérique.
 
 # Fonctionnalités attendues
 
-#### US1. Gérer les instructeurs
+US1. Gérer les instructeurs
 Utilisateurs concernés : administrateur
 
 L’administrateur sera un employé attitré par Eco IT. Lui seul pourra créer le compte des 
