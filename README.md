@@ -28,3 +28,55 @@ qu’instructeur. Il devra alors fournir un nom, un prénom, une adresse e-mail,
 profil, une petite description sur ses spécialités ainsi qu’un mot de passe sécurisé. Si 
 l’échange au cours d’une réunion entre lui et EcoIT est positif, l’administrateur validera sa 
 demande.
+
+US2. Créer un compte d’apprenant
+Utilisateurs concernés : apprenants
+
+Pour qu’un apprenant puisse suivre les formations, il devra au préalable s’enregistrer une 
+première fois. Il suffira d’une adresse e-mail, d’un pseudo et d’un mot de passe sécurisé.
+
+US3. Se connecter
+Utilisateurs concernés : administrateur, instructeurs, apprenants
+
+Quel que soit le type de compte, tout visiteur pourra se connecter grâce au même 
+formulaire de connexion. Les identifiants à entrer seront l’adresse e-mail et le mot de passe.
+
+US4. Créer une formation
+Utilisateurs concernés : instructeurs
+
+Tout instructeur pourra créer ses propres formations :
+- Une formation possède au moins un titre
+- Elle sera structurée grâce à des sections, et ces dernières regrouperont des leçons.
+- Chaque leçon aura une vidéo ainsi qu’une explication textuelle.
+
+US5. Suivre une formation
+Utilisateurs concernés : apprenants
+
+S’il n’est pas connecté, l’apprenant doit le faire pour suivre une formation. 
+Lorsque l’on clique sur le bouton “leçon terminée”, la leçon est validée et le parcours 
+progresse.
+Si toutes les leçons ont été suivies, alors la formation est considérée comme terminée pour 
+l’apprenant
+
+US6. Découvrir le répertoire des formations
+Utilisateurs concernés : apprenants, visiteurs
+
+Dans ce catalogue, les formations seront réparties dans une grille.
+Chaque formation verra affiché son titre, une image, un petit texte d’accroche et un bouton 
+pour accéder à la formation.
+Deux fonctions dynamiques doivent être disponibles pour filtrer les résultats, et ce sans 
+recharger la page :
+- Une barre de recherche
+- Une option “Formations en cours” / “Formations terminées” si l’utilisateur est un 
+apprenant
+Nota Bene : Sur la page d’accueil, seules les 3 formations sorties les plus récemment seront 
+visibles.
+
+US7. Lier un quiz à une section
+Utilisateurs concernés : apprenants
+
+Pour être sûr que l’apprenant ait bien retenu les concepts enseignés dans les leçons, un quiz peut être ajouté en fin de section. 
+Sur la page d’un quiz, les questions sont affichées les unes à la suite des autres. Chaque 
+question est un formulaire dont les réponses sont des champs de type radio. Au clic du 
+bouton “corriger”, le quiz révèle si les réponses choisies sont correctes ou incorrectes. Si la 
+réponse sélectionnée est incorrecte, alors la bonne réponse est montrée.
