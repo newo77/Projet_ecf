@@ -20,6 +20,7 @@ leur empreinte numérique.
 
 #### US1. Gérer les instructeurs
 Utilisateurs concernés : administrateur
+
 L’administrateur sera un employé attitré par Eco IT. Lui seul pourra créer le compte des 
 instructeurs. 
 Une page du site web devra permettre à tout visiteur de pouvoir postuler en tant 
