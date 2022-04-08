@@ -102,7 +102,7 @@ réponse sélectionnée est incorrecte, alors la bonne réponse est montrée.
   symfony console doctrine:migrations:migrate (pour effectuer cette commande vous devez avoir le CLI de symfony!)
   
 * Lancez le serveur de Symfony
-  symfony server:start
+  symfony serve
   
 # Déployer l'application sur Heroku
 
