@@ -107,15 +107,35 @@ réponse sélectionnée est incorrecte, alors la bonne réponse est montrée.
 # Déployer l'application sur Heroku
 
 * Se connecter avec son compte Heroku
+  
   heroku login
   
 * Créer un nouveau projet
-  heroku create Ecoit
+ 
+   heroku create Ecoit
   
 * Configurer les variables d'environnement
 
+   heroku config:set APP_ENV=prod heroku 
+
+   config:set APP_SECRET=$(php -r 'echo bin2hex(random_bytes(16));')
+
+* Ajouter NodeJS au buildpack
+
+   heroku buildpacks:add --index 1 heroku/nodejs
+
+* Faire un backup de la BDD et utiliser ce backup pour alimenter la base de données fournis par JawsDB avec les infos disponibles par celle-ci
+
+   mysqldump -u root -p ecoit > backup.sql     mysql -h NEWHOST -u NEWUSER -pNEWPASS NEWDATABASE < backup.sql
 
 
+* Configurer la nouvelle URL de la base de donnée fournie par JawsDB
+
+   heroku config:set DATABASE_URL=NEWDATABASE_URL
+
+* Pousser le déploiement
+
+   git push heroku main
 
 
 
