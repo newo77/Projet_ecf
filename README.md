@@ -106,6 +106,8 @@ réponse sélectionnée est incorrecte, alors la bonne réponse est montrée.
   
 # Déployer l'application sur Heroku
 
+Pour la base de donnée en mysql, j'ai utilisé Jawsdb et celui-ci m'as donné des idd à renseigner pour faire le lien avec ma bdd actuelle.
+
 * Se connecter avec son compte Heroku
   
   heroku login
