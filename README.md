@@ -1,7 +1,4 @@
-## Administrateur pour le back-office
 
-email: newodayesiu@gmail.com  
-mdp:Skyrimdu77440fr
 # Ecoit 🌳📕
 
 Dans le cadre de ma formation de développeur web et web mobile, j'ai été amenée à réaliser une application de cours en ligne ou les élèves peuvent suivrent des formations par thèmes.
